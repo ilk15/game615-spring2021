@@ -35,6 +35,6 @@ public class RingScript : MonoBehaviour
 		}
 
 		//Move the transform of the gameObject using the "Translate" function
-		transform.Translate(moveSpeed, 0, 0);
+		transform.Translate(0, moveSpeed, 0);
     }
 }
