@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
+using System;
+using Random = UnityEngine.Random;
 
 public class paw : MonoBehaviour
 {
@@ -15,9 +15,12 @@ public class paw : MonoBehaviour
     float moveSpeed = 40f;
     //float moveH;
     // float moveV;
+    float dist;
+    Vector3 hand;
     // Start is called before the first frame update
     void Start()
     {
+        Turn();
        // moveH = 0.05f;
        // moveV = 0.05f;
     }
@@ -42,15 +45,20 @@ public class paw : MonoBehaviour
     {
 
         //transform.LookAt(GameObject.Find("playArea").GetComponent<Play>().coffee.transform);
-        Vector3 hand = GameObject.Find("playArea").GetComponent<Play>().coffee.transform.position;
+        hand = GameObject.Find("playArea").GetComponent<Play>().coffee.transform.position;
         hand.y = transform.position.y;
         transform.LookAt(hand);
+        dist = Vector3.Distance(hand, transform.position);
+        
     }
 
     public void Attack()
     {
         //Turn();
         transform.position = transform.position + transform.forward * moveSpeed * Time.deltaTime;
+
+        float upSpeed = moveSpeed * (float) Math.Cos(Math.PI * Vector3.Distance(hand, transform.position) / dist);
+        transform.position = transform.position + transform.up * upSpeed * Time.deltaTime;
     }
 
     //IEnumerator Pause()
