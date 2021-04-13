@@ -1,0 +1,10 @@
+# OBJ Material Export by Luxion KeyShot
+
+newmtl Paint Matte White #1
+Kd 1 1 1
+
+newmtl Hard Shiny Plastic Black
+Kd 0.0117647 0.0117647 0.0117647
+
+newmtl Cardboard 1
+Kd 1 1 0.945098

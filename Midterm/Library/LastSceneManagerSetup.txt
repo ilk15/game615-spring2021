@@ -1,0 +1,5 @@
+sceneSetups:
+- path: D:/Users/iliad/Documents/GitHub/game615-spring2021/615project1/Assets/cupgame.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
